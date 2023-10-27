@@ -29,6 +29,7 @@
       v-for="note in notes"
       :key="note.id"
       :note="note"
+      @deleteClicked="deleteNote"
     />
 
   </div>
@@ -68,6 +69,10 @@ const addNote = () => {
   notes.value.unshift(note)
   newNote.value = ''
   newNoteRef.value.focus()
+}
+
+const deleteNote = (idToDelete) => {
+  notes.value = notes.value.filter(note => note.id !== idToDelete)
 }
 
 </script>
