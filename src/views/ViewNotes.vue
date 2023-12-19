@@ -28,9 +28,9 @@
 
 <script setup>
 /* ====== imports ====== */
-
 import { ref } from 'vue'
 import { useStoreNotes } from '@/stores/storeNotes'
+import { useWatchCharacters } from '@/use/useWatchCharacters'
 
 import Note from '@/components/Notes/Note.vue'
 import AddEditNote from '@/components/Notes/AddEditNote.vue'
@@ -53,5 +53,8 @@ const addNote = () => {
 const deleteNote = (idToDelete) => {
   storeNotes.deleteNote (idToDelete)
 }
+
+/** Watch characters */
+useWatchCharacters(newNote, 50)
 
 </script>

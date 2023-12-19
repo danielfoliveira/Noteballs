@@ -9,6 +9,7 @@ import { RouterLink } from 'vue-router';
         </div>
   
           <a
+            ref="navbarBurgerRef"
             class="navbar-burger"
             :class="{ 'is-active': showMobileNav }"
             aria-expanded="false"
@@ -24,6 +25,7 @@ import { RouterLink } from 'vue-router';
       </div>
   
       <div
+        ref="navbarMenuRef"
         id="navbarBasicExample"
         class="navbar-menu"
         :class="{ 'is-active': showMobileNav }"
@@ -54,9 +56,19 @@ import { RouterLink } from 'vue-router';
 <script setup>
 /* imports */
   import { ref } from 'vue'
+  import { onClickOutside } from '@vueuse/core'
 
 /* Mobile Nav */
   const showMobileNav = ref(false)
+  const navbarMenuRef = ref(null)
+  const navbarBurgerRef = ref(null)
+
+/** Clickoutside */
+onClickOutside(navbarMenuRef, () => { 
+  showMobileNav.value = false 
+}, {
+  ignore: [navbarBurgerRef]
+})
 </script>
 
 <style>

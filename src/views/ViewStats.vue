@@ -28,5 +28,4 @@ import { useStoreNotes } from '@/stores/storeNotes'
 /** Store */
 const storeNotes = useStoreNotes()
 
-
 </script>
