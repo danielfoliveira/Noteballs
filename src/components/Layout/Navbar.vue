@@ -33,6 +33,7 @@ import { RouterLink } from 'vue-router';
             to="/"
             class="navbar-item"
             active-class="is-active"
+            @click="showMobileNav = false"
           >
             Notes
           </RouterLink>
@@ -40,6 +41,7 @@ import { RouterLink } from 'vue-router';
             to="/stats"
             class="navbar-item"
             active-class="is-active"
+            @click="showMobileNav = false"
           >
             Stats
           </RouterLink>

@@ -17,6 +17,7 @@
         <button
             class="button is-link has-background-link ml-2"
             :disabled="!noteContent"
+            @click="handleSavedClicked"
           >
             Save Note
           </button>
@@ -28,13 +29,14 @@
 <script setup>
 /** Imports */
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useStoreNotes } from '@/stores/storeNotes'
 
 import AddEditNote from '@/components/Notes/AddEditNote.vue'
 
 /** Router */
 const route = useRoute()
+const router = useRouter()
 
 /** Store */
 const storeNotes = useStoreNotes()
@@ -43,5 +45,11 @@ const storeNotes = useStoreNotes()
 const noteContent = ref('')
 noteContent.value = storeNotes.getNoteContent(route.params.id)?.content
 
+
+/** methods */
+const handleSavedClicked = () => {
+  storeNotes.updateNote(route.params.id, noteContent.value)
+  router.push('/')
+}
 
 </script>
