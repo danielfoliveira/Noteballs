@@ -28,6 +28,7 @@
     <ModalDeleteNote
       v-if="modals.deleteNote"
       v-model="modals.deleteNote"
+      :id="note.id"
     />
   </div>
 </template>
