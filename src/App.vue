@@ -6,8 +6,19 @@
 </template>
 
 <script setup>
-/* Imports */
-  import Navbar from '@/components/Layout/Navbar.vue'
+import { onMounted } from 'vue'
+import { useStoreNotes } from '@/stores/storeNotes'
+
+import Navbar from '@/components/Layout/Navbar.vue'
+
+// store
+const storeNotes = useStoreNotes()
+const { getNotes } = storeNotes
+
+// life cycle
+onMounted(() => {
+  getNotes()
+})
 </script>
 <style>
 @import 'bulma/css/bulma.min.css';
