@@ -7,17 +7,16 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { useStoreNotes } from '@/stores/storeNotes'
+import { useStoreAuth } from '@/stores/storeAuth'
 
 import Navbar from '@/components/Layout/Navbar.vue'
 
 // store
-const storeNotes = useStoreNotes()
-const { getNotes } = storeNotes
+const storeAuth = useStoreAuth()
 
 // life cycle
 onMounted(() => {
-  getNotes()
+  storeAuth.init()
 })
 </script>
 <style>

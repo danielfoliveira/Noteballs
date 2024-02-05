@@ -1,5 +1,3 @@
-
-import { RouterLink } from 'vue-router';
 <template>
   <nav class="navbar is-success" role="navigation" aria-label="main navigation">
     <div class="container is-max-desktop px-2">
@@ -30,6 +28,15 @@ import { RouterLink } from 'vue-router';
         class="navbar-menu"
         :class="{ 'is-active': showMobileNav }"
       >
+        <div class="navbar-start">
+          <button
+            v-if="storeAuth.user.id"
+            class="button is-small is-info mt-3 ml-3"
+            @click="logout"
+          >
+            {{ storeAuth.user.email }}
+          </button>
+        </div>
         <div class="navbar-end">
           <RouterLink
             to="/"
@@ -57,6 +64,12 @@ import { RouterLink } from 'vue-router';
 /* imports */
   import { ref } from 'vue'
   import { onClickOutside } from '@vueuse/core'
+  import { RouterLink } from 'vue-router'
+  import { useStoreAuth } from '@/stores/storeAuth'
+
+
+//store
+const storeAuth = useStoreAuth()
 
 /* Mobile Nav */
   const showMobileNav = ref(false)
@@ -69,6 +82,11 @@ onClickOutside(navbarMenuRef, () => {
 }, {
   ignore: [navbarBurgerRef]
 })
+
+const logout = () => {
+  storeAuth.signOut()
+  showMobileNav.value = false 
+}
 </script>
 
 <style>

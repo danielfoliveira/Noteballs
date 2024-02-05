@@ -16,19 +16,32 @@
       </template>
     </AddEditNote>
 
-    <Note
-      v-for="note in storeNotes.notes"
-      :key="note.id"
-      :note="note"
-      @deleteClicked="deleteNote"
+    <progress
+      v-if="storeNotes.isLoading"
+      class="progress is-small is-success"
+      max="100" 
     />
+
+    <template v-else>
+      <Note
+        v-for="note in storeNotes.notes"
+        :key="note.id"
+        :note="note"
+        @deleteClicked="deleteNote"
+      />
+
+      <div
+        v-if="!storeNotes.notes.length"
+        v-text="'No notes here yet... '"
+        class="is-size-4 has-text-centered has-text-grey-light is-family-monospace py-6"
+      />
+    </template>
 
   </div>
 </template>
 
 <script setup>
-/* ====== imports ====== */
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useStoreNotes } from '@/stores/storeNotes'
 import { useWatchCharacters } from '@/use/useWatchCharacters'
 
@@ -36,14 +49,15 @@ import Note from '@/components/Notes/Note.vue'
 import AddEditNote from '@/components/Notes/AddEditNote.vue'
 
 
-/* ====== store ======*/
+// store
 const storeNotes = useStoreNotes()
+const { getNotes } = storeNotes
 
-/* ====== notes ======*/
+// notes
 const newNote = ref('')
 const addEditNoteRef = ref(null)
 
-/* ====== methods ====== */
+// methods
 const addNote = () => {
   storeNotes.addNote(newNote.value)
   newNote.value = ''
@@ -56,5 +70,10 @@ const deleteNote = (idToDelete) => {
 
 /** Watch characters */
 useWatchCharacters(newNote, 50)
+
+// life cycle
+onMounted(() => {
+  getNotes()
+})
 
 </script>
