@@ -34,7 +34,7 @@
             class="button is-small is-info mt-3 ml-3"
             @click="logout"
           >
-            {{ storeAuth.user.email }}
+            logout {{ storeAuth.user.email }}
           </button>
         </div>
         <div class="navbar-end">

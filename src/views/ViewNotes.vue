@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useStoreNotes } from '@/stores/storeNotes'
 import { useWatchCharacters } from '@/use/useWatchCharacters'
 
@@ -51,7 +51,7 @@ import AddEditNote from '@/components/Notes/AddEditNote.vue'
 
 // store
 const storeNotes = useStoreNotes()
-const { getNotes } = storeNotes
+const { init } = storeNotes
 
 // notes
 const newNote = ref('')
@@ -70,10 +70,5 @@ const deleteNote = (idToDelete) => {
 
 /** Watch characters */
 useWatchCharacters(newNote, 50)
-
-// life cycle
-onMounted(() => {
-  getNotes()
-})
 
 </script>
