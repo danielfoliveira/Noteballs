@@ -19,6 +19,3 @@ onMounted(() => {
   storeAuth.init()
 })
 </script>
-<style>
-@import 'bulma/css/bulma.min.css';
-</style>

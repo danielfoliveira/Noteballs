@@ -89,7 +89,8 @@ const logout = () => {
 }
 </script>
 
-<style>
+<style scoped>
+@import './Navbar.css';
 @media (max-width: 1023px) {
   .navbar-menu {
     position: absolute;

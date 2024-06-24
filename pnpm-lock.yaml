@@ -11,9 +11,6 @@ importers:
       '@vueuse/core':
         specifier: ^10.7.0
         version: 10.11.0(vue@3.4.29)
-      bulma:
-        specifier: ^0.9.4
-        version: 0.9.4
       firebase:
         specifier: ^10.7.1
         version: 10.12.2
@@ -580,9 +577,6 @@ packages:
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
-
-  bulma@0.9.4:
-    resolution: {integrity: sha512-86FlT5+1GrsgKbPLRRY7cGDg8fsJiP/jzTqXXVqiUZZ2aZT8uemEOHlU1CDU+TxklPEZ11HZNNWclRBBecP4CQ==}
 
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -1771,8 +1765,6 @@ snapshots:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
-
-  bulma@0.9.4: {}
 
   callsites@3.1.0: {}
 
