@@ -2,7 +2,7 @@
   <header class="navbar">
     <div class="container">
       <div class="navbar--brand align-content-left">
-        <a href="#">
+        <a classhref="#">
           Noteballs
         </a>
       </div>

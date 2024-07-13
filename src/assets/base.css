@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
