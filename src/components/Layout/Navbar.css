@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #48c78e;
+  color: #fff;
+  min-height: 3rem;
+  z-index: 2;
+}
+
+.navbar--item {
+  line-height: 1.5;
+  padding: .5rem .75rem;
+}
+
+.navbar--item:hover {
+  background-color: #3abb81;
+}
+
+.navbar--brand {
+  font-size: 1.5rem;
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.navbar--menu {
+  display: flex;
+  flex-grow: 1;
+}
+
+.navbar--logout {
+  display: flex;
+  flex: 1 1 auto;
+  width: auto;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.button-logout {
+  padding: 0.3rem;
+  background-color:#3488ce;
+  color: #fff;
+  border: transparent;
+}
+
+.is-active {
+  text-decoration: underline;
+}

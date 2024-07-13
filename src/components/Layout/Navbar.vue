@@ -1,63 +1,43 @@
 <template>
-  <nav class="navbar is-success" role="navigation" aria-label="main navigation">
-    <div class="container is-max-desktop px-2">
-      <div class="navbar-brand">
-        <div class="navbar-item is-size-4 is-family-monospace">
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar--brand align-content-left">
+        <a href="#">
           Noteballs
-        </div>
-  
-          <a
-            ref="navbarBurgerRef"
-            class="navbar-burger"
-            :class="{ 'is-active': showMobileNav }"
-            aria-expanded="false"
-            aria-label="menu"
-            data-target="navbarBasicExample"
-            role="button"
-            @click.prevent="showMobileNav = !showMobileNav"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+        </a>
       </div>
-  
-      <div
-        ref="navbarMenuRef"
-        id="navbarBasicExample"
-        class="navbar-menu"
-        :class="{ 'is-active': showMobileNav }"
+      <div class="navbar--logout">
+      <button
+        v-if="storeAuth.user.id"
+        class="button-logout"
+        @click="logout"
       >
-        <div class="navbar-start">
-          <button
-            v-if="storeAuth.user.id"
-            class="button is-small is-info mt-3 ml-3"
-            @click="logout"
-          >
-            logout {{ storeAuth.user.email }}
-          </button>
-        </div>
-        <div class="navbar-end">
-          <RouterLink
-            to="/"
-            class="navbar-item"
-            active-class="is-active"
-            @click="showMobileNav = false"
-          >
-            Notes
-          </RouterLink>
-          <RouterLink
-            to="/stats"
-            class="navbar-item"
-            active-class="is-active"
-            @click="showMobileNav = false"
-          >
-            Stats
-          </RouterLink>
-        </div>
+        logout {{ storeAuth.user.email }}
+      </button>
       </div>
+      <nav
+        v-if="storeAuth.user.id"
+        class="align-content-right"
+      >
+        <RouterLink
+          to="/"
+          class="navbar--item"
+          active-class="is-active"
+          @click="showMobileNav = false"
+        >
+          Notes
+        </RouterLink>
+        <RouterLink
+          to="/stats"
+          class="navbar--item"
+          active-class="is-active"
+          @click="showMobileNav = false"
+        >
+          Stats
+        </RouterLink>
+      </nav>
     </div>
-  </nav>
+  </header>
 </template>
 
 <script setup>
@@ -89,13 +69,6 @@ const logout = () => {
 }
 </script>
 
-<style scoped>
-@import './Navbar.css';
-@media (max-width: 1023px) {
-  .navbar-menu {
-    position: absolute;
-    left: 0;
-    width: 100%;
-  }
-}
+<style scope>
+@import './Navbar.css'; 
 </style>

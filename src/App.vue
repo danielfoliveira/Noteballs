@@ -19,3 +19,7 @@ onMounted(() => {
   storeAuth.init()
 })
 </script>
+
+<style>
+@import './assets/main.css';
+</style>
