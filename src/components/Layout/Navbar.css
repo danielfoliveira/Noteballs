@@ -10,8 +10,12 @@
 }
 
 .navbar--item {
+  display: flex;
+  height: 100%;
   line-height: 1.5;
   padding: .5rem .75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar--item:hover {
