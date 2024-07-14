@@ -69,6 +69,6 @@ const logout = () => {
 }
 </script>
 
-<style scope>
+<style scoped>
 @import './Navbar.css'; 
 </style>

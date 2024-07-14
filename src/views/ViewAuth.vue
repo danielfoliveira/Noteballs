@@ -1,55 +1,43 @@
 <template>
-  <div class="auth">
-    <div class="tabs is-centered">
-      <ul>
-        <li 
-          :class="{ 'is-active': !register }"
-        >
-            <a @click.prevent="register = false">Login</a>
-        </li>
-        <li 
-          :class="{ 'is-active': register }"
-        >
-          <a @click.prevent="register = true">Sign Up</a>
-        </li>
-      </ul>
-    </div>
-    <div class="card auth-form">
-      <div class="card-content">
-        <div class="title has-text-centered">
-          {{ formTitle }}
-        </div>
-
-        <form @submit.prevent="onSubmit">
-          <div class="field">
-            <div class="control">
-              <input
-                v-model="credentials.email"
-                class="input"
-                placeholder="Email"
-                type="email"
-              >
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
-              <input
-                v-model="credentials.password"
-                class="input"
-                placeholder="Password"
-                type="password"
-              >
-            </div>
-          </div>
-          <div class="field is-grouped is-grouped-right">
-            <p class="control">
-              <button class="button is-success">
-                {{ formTitle }}
-              </button>
-            </p>
-          </div>
-        </form>
+  <div class="tabs">
+    <ul>
+      <li :class="{ 'tab-item--active': !register }">
+          <a @click.prevent="register = false">Login</a>
+      </li>
+      <li :class="{ 'tab-item--active': register }">
+        <a @click.prevent="register = true">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card auth-form">
+    <div class="card-content">
+      <div class="title">
+        {{ formTitle }}
       </div>
+
+      <form @submit.prevent="onSubmit">
+        <div class="field">
+          <input
+            v-model="credentials.email"
+            class="input"
+            placeholder="Email"
+            type="email"
+          >
+        </div>
+        <div class="field">
+          <input
+            v-model="credentials.password"
+            class="input"
+            placeholder="Password"
+            type="password"
+          >
+        </div>
+        <div class="submit-container">
+          <button class="button">
+            {{ formTitle }}
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -86,10 +74,6 @@ const onSubmit = () => {
 }
 </script>
 
-<style>
-.auth-form {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
+<style scoped>
+@import '@/assets/viewAuth.css';
 </style>

@@ -10,14 +10,19 @@ html {
 
 body {
   font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
-  line-height: 1;
+  line-height: 1.5;
   font-weight: 400;
   color: #555;
+  background-color: #effaf5;
 }
 
 a:link, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 .align-content-left {
@@ -35,9 +40,17 @@ a:link, a:visited, a:hover, a:active {
 .container {
   display: flex;
   width: 100%;
-  flex-flow: row;
-  padding: 0 1rem;
+  flex-flow: row wrap;
+  padding: 0 1.5rem;
   margin: 0 auto;
   max-width: 80rem;
 }
 
+.section {
+  position: relative;
+  top: 3.25rem;
+}
+
+.is-active {
+  text-decoration: underline;
+}
