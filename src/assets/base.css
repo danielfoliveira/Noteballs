@@ -16,7 +16,7 @@ body {
   background-color: #effaf5;
 }
 
-a:link, a:visited, a:hover, a:active {
+a {
   color: inherit;
   text-decoration: none;
 }
@@ -52,5 +52,6 @@ ul {
 }
 
 .is-active {
+  background-color: #3abb81;
   text-decoration: underline;
 }
