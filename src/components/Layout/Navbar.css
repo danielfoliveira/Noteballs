@@ -43,7 +43,7 @@
 }
 
 .button-logout {
-  padding: 0.3rem;
+  padding: .312rem .75rem .312rem .75rem;
   background-color:#3488ce;
   color: #fff;
   border: transparent;

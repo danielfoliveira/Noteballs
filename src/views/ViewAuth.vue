@@ -1,43 +1,46 @@
 <template>
-  <div class="tabs">
-    <ul>
-      <li :class="{ 'tab-item--active': !register }">
-          <a @click.prevent="register = false">Login</a>
-      </li>
-      <li :class="{ 'tab-item--active': register }">
-        <a @click.prevent="register = true">Sign Up</a>
-      </li>
-    </ul>
-  </div>
-  <div class="card auth-form">
-    <div class="card-content">
-      <div class="title">
-        {{ formTitle }}
-      </div>
+  <div class="auth-container">
+    <div class="tabs">
+      <ul>
+        <li :class="{ 'tab-item--active': !register }">
+            <a @click.prevent="register = false">Login</a>
+        </li>
+        <li :class="{ 'tab-item--active': register }">
+          <a @click.prevent="register = true">Sign Up</a>
+        </li>
+      </ul>
+    </div>
 
-      <form @submit.prevent="onSubmit">
-        <div class="field">
-          <input
-            v-model="credentials.email"
-            class="input"
-            placeholder="Email"
-            type="email"
-          >
+    <div class="card auth-form">
+      <div class="card-content">
+        <div class="title">
+          {{ formTitle }}
         </div>
-        <div class="field">
-          <input
-            v-model="credentials.password"
-            class="input"
-            placeholder="Password"
-            type="password"
-          >
-        </div>
-        <div class="submit-container">
-          <button class="button">
-            {{ formTitle }}
-          </button>
-        </div>
-      </form>
+
+        <form @submit.prevent="onSubmit">
+          <div class="field">
+            <input
+              v-model="credentials.email"
+              class="input"
+              placeholder="Email"
+              type="email"
+            >
+          </div>
+          <div class="field">
+            <input
+              v-model="credentials.password"
+              class="input"
+              placeholder="Password"
+              type="password"
+            >
+          </div>
+          <div class="submit-container">
+            <button class="button">
+              {{ formTitle }}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>

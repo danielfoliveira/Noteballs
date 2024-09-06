@@ -1,3 +1,8 @@
+.auth-container {
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
 .tabs {
   display: flex;
   justify-content: space-between;
