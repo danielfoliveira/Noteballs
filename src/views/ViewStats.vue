@@ -1,10 +1,10 @@
 <template>
   <div class="stats">
-    <table class="table is-fullwidth">
+    <table class="table">
       <thead>
         <tr>
-          <th>Stat</th>
-          <th>Value</th>
+          <th class="table-header">Stat</th>
+          <th class="table-header">Value</th>
         </tr>
       </thead>
       <tbody>
@@ -23,9 +23,12 @@
 
 <script setup>
 /** Imports */
-import { useStoreNotes } from '@/stores/storeNotes'
+import { useStoreNotes } from "@/stores/storeNotes";
 
 /** Store */
-const storeNotes = useStoreNotes()
-
+const storeNotes = useStoreNotes();
 </script>
+
+<style scoped>
+@import "@/assets/viewStats.css";
+</style>
