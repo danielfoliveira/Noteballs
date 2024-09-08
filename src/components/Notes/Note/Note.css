@@ -1,0 +1,28 @@
+.content {
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-footer {
+  align-items: stretch;
+  border-top: 1px solid #ededed;
+  display: flex;
+}
+
+.card-footer-item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: .75rem;
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 0;
+}
+
+.card-footer-item:not(:last-child) {
+  border-right: 1px solid #ededed;
+}

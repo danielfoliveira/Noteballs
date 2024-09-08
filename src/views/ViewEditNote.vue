@@ -8,19 +8,16 @@
       ref="addEditNoteRef"
     >
       <template #buttons>
-        <button
-            class="button is-link is-light"
-            @click="$router.back()"
-          >
-            Cancel
+        <button class="button is-link is-light" @click="$router.back()">
+          Cancel
         </button>
         <button
-            class="button is-link has-background-link ml-2"
-            :disabled="!noteContent"
-            @click="handleSavedClicked"
-          >
-            Save Note
-          </button>
+          class="button is-link has-background-link ml-2"
+          :disabled="!noteContent"
+          @click="handleSavedClicked"
+        >
+          Save Note
+        </button>
       </template>
     </AddEditNote>
   </div>
@@ -28,28 +25,26 @@
 
 <script setup>
 /** Imports */
-import { ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useStoreNotes } from '@/stores/storeNotes'
+import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useStoreNotes } from "@/stores/storeNotes";
 
-import AddEditNote from '@/components/Notes/AddEditNote.vue'
+import AddEditNote from "@/components/Notes/AddEditNote/AddEditNote.vue";
 
 /** Router */
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
 /** Store */
-const storeNotes = useStoreNotes()
+const storeNotes = useStoreNotes();
 
 /** Notes */
-const noteContent = ref('')
-noteContent.value = storeNotes.getNoteContent(route.params.id)?.content
-
+const noteContent = ref("");
+noteContent.value = storeNotes.getNoteContent(route.params.id)?.content;
 
 /** methods */
 const handleSavedClicked = () => {
-  storeNotes.updateNote(route.params.id, noteContent.value)
-  router.push('/')
-}
-
+  storeNotes.updateNote(route.params.id, noteContent.value);
+  router.push("/");
+};
 </script>
