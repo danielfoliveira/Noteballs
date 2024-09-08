@@ -1,25 +1,21 @@
 <template>
-  <div class="card mb-2" :class="`has-background-${bgColor}-dark `">
-    <label v-if="label" class="label has-text-white">
+  <div class="card mt-1 mb-2 bg-color-primary-dark p-1">
+    <label v-if="label" class="label">
       {{ label }}
     </label>
-    <div class="field">
-      <div class="control">
-        <textarea
-          :value="modelValue"
-          ref="textareaRef"
-          class="textarea"
-          :placeholder="placeholder"
-          @input="$emit('update:modelValue', $event.target.value)"
-          v-autofocus
-        />
-      </div>
+    <div class="content">
+      <textarea
+        :value="modelValue"
+        ref="textareaRef"
+        class="textarea"
+        :placeholder="placeholder"
+        @input="$emit('update:modelValue', $event.target.value)"
+        v-autofocus
+      />
     </div>
 
-    <div class="field is-grouped is-grouped-right">
-      <div class="control">
-        <slot name="buttons" />
-      </div>
+    <div class="footer">
+      <slot name="buttons" />
     </div>
   </div>
 </template>
@@ -64,3 +60,7 @@ defineExpose({
   focusTextArea,
 });
 </script>
+
+<style scope>
+@import "./AddEditNote.css"
+</style>

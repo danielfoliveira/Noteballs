@@ -1,0 +1,38 @@
+.label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.content {
+  width: 100%;
+  margin-bottom: .75rem;
+}
+
+.textarea {
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  padding: calc(.75em - 1px);
+  resize: vertical;
+}
+
+.textarea:focus {
+  border-color: #485fc7;
+  box-shadow: 0 0 0 .125em #485fc740;
+  outline: 0;
+}
+
+.textarea:not([rows]) {
+  max-height: 40em;
+  min-height: 8em;
+}
+
+.textarea::placeholder {
+  color: #b5b5b5;
+}
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

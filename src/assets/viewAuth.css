@@ -75,13 +75,3 @@
   align-items: center;
   justify-content: flex-end;
 }
-
-.button {
-  background-color: #48c78e;
-  border-color: transparent;
-  color: #fff;
-  cursor: pointer;
-  padding: .5rem .875rem;
-  border-radius: 5px;
-  font-size: 1rem;
-}
