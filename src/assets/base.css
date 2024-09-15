@@ -70,7 +70,9 @@ ul {
 }
 
 .card {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   background-color: #fff;
   box-shadow: 0 0.4rem 1rem -0.125rem rgba(0, 0, 0, 0.075);
   border-radius: 0.25rem;
@@ -93,6 +95,10 @@ ul {
   margin-top: 1rem !important;
 }
 
+.ml-1 {
+  margin-left: 1rem !important;
+}
+
 .align-text-right {
   text-align: right !important;
 }
@@ -105,12 +111,30 @@ ul {
   background-color: #2b7755 !important;
 }
 
+.bg-color-link-dark {
+  background-color: #3850b7 !important;
+}
+
+.bg-color-link {
+  background-color: #5F73C5 !important;
+}
+
 .button {
   background-color: #48c78e;
   border-color: transparent;
   color: #fff;
   cursor: pointer;
-  padding: .5rem .875rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-secondary {
+  background-color: #fff;
+  border-color: transparent;
+  color: #000;
+  cursor: pointer;
+  padding: 0.5rem 0.875rem;
   border-radius: 5px;
   font-size: 1rem;
 }

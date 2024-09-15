@@ -8,11 +8,14 @@
       ref="addEditNoteRef"
     >
       <template #buttons>
-        <button class="button is-link is-light" @click="$router.back()">
+        <button
+          class="button-secondary"
+          @click="$router.back()"
+        >
           Cancel
         </button>
         <button
-          class="button is-link has-background-link ml-2"
+          class="button bg-color-link ml-1"
           :disabled="!noteContent"
           @click="handleSavedClicked"
         >
@@ -48,3 +51,7 @@ const handleSavedClicked = () => {
   router.push("/");
 };
 </script>
+
+<style scoped>
+@import "@/assets/viewEditNote.css";
+</style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="card mt-1 mb-2 bg-color-primary-dark p-1">
-    <label v-if="label" class="label">
+  <div :class="`card mt-1 mb-2 bg-color-${bgColor}-dark p-1`">
+    <label v-if="label" class="label mb-1">
       {{ label }}
     </label>
     <div class="content">
@@ -33,7 +33,7 @@ const props = defineProps({
   },
   bgColor: {
     type: String,
-    default: "success",
+    default: "primary",
   },
   placeholder: {
     type: String,
@@ -62,5 +62,5 @@ defineExpose({
 </script>
 
 <style scope>
-@import "./AddEditNote.css"
+@import "./AddEditNote.css";
 </style>
