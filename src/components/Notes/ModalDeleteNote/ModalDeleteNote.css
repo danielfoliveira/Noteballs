@@ -1,0 +1,77 @@
+.modal {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 40;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.modal-background {
+  display: block;
+  background-color: #0a0a0adb;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Modal Content/Box */
+.modal-card {
+  position: relative;
+  background-color: #fefefe;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  width: 640px;
+}
+
+/* Modal Header */
+.modal-card-header {
+  border-bottom: 1px solid #dbdbdb;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  align-items: center;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  position: relative;
+}
+
+/* Modal Body */
+.modal-card-body {
+  padding: 16px;
+}
+
+/* Modal Footer */
+.modal-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  background-color: #f5f5f5;
+  color: #4a4a4a;
+}
+
+/* The Close Button */
+.close {
+  color: #000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #c0c0c0;
+  text-decoration: none;
+  cursor: pointer;
+}
