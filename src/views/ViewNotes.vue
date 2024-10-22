@@ -16,26 +16,18 @@
       </template>
     </AddEditNote>
 
-    <progress
-      v-if="storeNotes.isLoading"
-      class="progress is-small is-success"
-      max="100"
+    <Note
+      v-for="note in storeNotes.notes"
+      :key="note.id"
+      :note="note"
+      @deleteClicked="deleteNote"
     />
 
-    <template v-else>
-      <Note
-        v-for="note in storeNotes.notes"
-        :key="note.id"
-        :note="note"
-        @deleteClicked="deleteNote"
-      />
-
-      <div
-        v-if="!storeNotes.notes.length"
-        v-text="'No notes here yet... '"
-        class="is-size-4 has-text-centered has-text-grey-light is-family-monospace py-6"
-      />
-    </template>
+    <div
+      v-if="!storeNotes.notes.length"
+      v-text="'No notes here yet... '"
+      class="is-size-4 has-text-centered has-text-grey-light is-family-monospace py-6"
+    />
   </div>
 </template>
 

@@ -42,33 +42,18 @@
 
 <script setup>
 /* imports */
-  import { ref } from 'vue'
-  import { onClickOutside } from '@vueuse/core'
-  import { RouterLink } from 'vue-router'
-  import { useStoreAuth } from '@/stores/storeAuth'
+import { RouterLink } from 'vue-router'
+import { useStoreAuth } from '@/stores/storeAuth'
 
 
 //store
 const storeAuth = useStoreAuth()
 
-/* Mobile Nav */
-  const showMobileNav = ref(false)
-  const navbarMenuRef = ref(null)
-  const navbarBurgerRef = ref(null)
-
-/** Clickoutside */
-onClickOutside(navbarMenuRef, () => { 
-  showMobileNav.value = false 
-}, {
-  ignore: [navbarBurgerRef]
-})
-
 const logout = () => {
   storeAuth.signOut()
-  showMobileNav.value = false 
 }
 </script>
 
 <style scoped>
-@import './Navbar.css'; 
+@import './Navbar.css';
 </style>
